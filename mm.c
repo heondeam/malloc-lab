@@ -50,9 +50,6 @@ team_t team = {
 #define GET_SIZE(p) (GET(p) & ~0x7)
 #define GET_ALLOC(p) (GET(p) & 0x1)
 
-// char* 형으로 선언한 이유 WSIZE byte만큼 이동하기 위해
-// int* 형으로 선언했다면 WSIZE를 빼주면 16byte를 이동하게 된다.
-
 /* 블록 포인터 bp를 인자로 받아 블록의 header와 footer의 주소를 반환한다 */
 #define HDRP(bp) ((char *)(bp) - WSIZE)
 #define FTRP(bp) ((char *)(bp) + GET_SIZE(HDRP(bp)) - DSIZE)

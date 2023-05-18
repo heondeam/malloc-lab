@@ -1,52 +1,25 @@
-#####################################################################
-# CS:APP Malloc Lab
-# Handout files for students
-#
-# Copyright (c) 2002, R. Bryant and D. O'Hallaron, All rights reserved.
-# May not be used, modified, or copied without permission.
-#
-######################################################################
+# 동적 메모리 할당
 
-***********
-Main Files:
-***********
+## 동적 메모리 할당을 사용하는 이유
 
-mm.{c,h}	
-	Your solution malloc package. mm.c is the file that you
-	will be handing in, and is the only file you should modify.
+## 동적 메모리 할당기의 유형
 
-mdriver.c	
-	The malloc driver that tests your mm.c file
+## 할당기 처리량과 메모리 최고 이용도
 
-short{1,2}-bal.rep
-	Two tiny tracefiles to help you get started. 
+## 메모리 단편화
 
-Makefile	
-	Builds the driver
+## 할당기 구현 이슈
 
-**********************************
-Other support files for the driver
-**********************************
+## 가용 블록 구성 방법 (= 가용 블록들을 추적하는 방법)
 
-config.h	Configures the malloc lab driver
-fsecs.{c,h}	Wrapper function for the different timer packages
-clock.{c,h}	Routines for accessing the Pentium and Alpha cycle counters
-fcyc.{c,h}	Timer functions based on cycle counters
-ftimer.{c,h}	Timer functions based on interval timers and gettimeofday()
-memlib.{c,h}	Models the heap and sbrk function
+## 묵시적 가용 리스트(implicit free list) 기법을 통한 할당기의 구현
 
-*******************************
-Building and running the driver
-*******************************
-To build the driver, type "make" to the shell.
+## 배치 : 묵시적 가용 리스트에서 가용 블록을 탐색하는 방법
 
-To run the driver on a tiny test trace:
+## 분할 : 가용 블록을 할당하는 방법
 
-	unix> mdriver -V -f short1-bal.rep
+## 연결 : 블록 반환 시 인접 가용 블록(이전, 이후)들을 연결하는 방법
 
-The -V option prints out helpful tracing and summary information.
+## 경계 태그를 통한 연결 (Boundary tags)
 
-To get a list of the driver flags:
-
-	unix> mdriver -h
-
+## 묵시적 가용 리스트의 불변하는 형식
